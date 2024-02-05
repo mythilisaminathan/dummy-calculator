@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="index.css" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>Dummy Calculator⏳</h1>
+    <div class="container">
+      <input type="num" placeholder="enter the num1" id="num1" />
+
+      <input type="num" placeholder="enter the num2" id="num2" />
+
+      <select name="" id="arithmatic">
+        <option value="add">Addition</option>
+        <option value="sub">Subtraction</option>
+        <option value="mul">Multiplication</option>
+        <option value="div">Division</option>
+      </select>
+
+      <button type="button" onclick="calculation()">Calculate</button>
+      <div class="res1">
+        <p id="result"></p>
+      </div>
+    </div>
+    <script>
+      function calculation() {
+        const res = document.getElementById("result");
+        let num1 = parseFloat(document.getElementById("num1").value);
+        let num2 = parseFloat(document.getElementById("num2").value);
+        let operator = document.getElementById("arithmatic").value;
+        let store;
+
+        switch (operator) {
+          case "add":
+            store = num1 + num2;
+            break;
+          case "sub":
+            store = num1 - num2;
+            break;
+          case "mul":
+            store = num1 * num2;
+            break;
+        }
+
+        res.innerHTML = "the value is: " + store;
+      }
+    </script>
+  </body>
+</html>
